@@ -20,7 +20,6 @@ K.App('cube-demo/AIndex', ['core/dialog/AsyncDialog', 'core/dialog/MsgBox', 'cor
                     me.deleteConfig(url);
                 },
                 on_dismiss: function() {
-                    me.updateView();
                 },
             };
             MsgBox.confirm('Are you sure to delete this item?', data);
@@ -39,7 +38,6 @@ K.App('cube-demo/AIndex', ['core/dialog/AsyncDialog', 'core/dialog/MsgBox', 'cor
                 var el = $('#input-' + key);
                 var div = el.parent();
                 var v = el.val();
-                K.log(key, v);
                 if (!v) {
                     ok = false;
                     div.addClass('has-error').removeClass('has-success');
@@ -74,10 +72,12 @@ K.App('cube-demo/AIndex', ['core/dialog/AsyncDialog', 'core/dialog/MsgBox', 'cor
         },
 
         deleteConfig: function(url) {
+            var me = this;
             chrome.storage.sync.get('config_list', function(data) {
                 var config_list = data['config_list'] || {};
                 delete config_list[url];
                 chrome.storage.sync.set({'config_list': config_list});
+                me.updateView();
             });
         },
 

@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name": "List sorter",
+    "name": "List Sorter",
     "version": "0.0.1",
     "description": "Sort <li/> in your page.",
     "permissions": ["tabs", "storage", "notifications", "<all_urls>"],
