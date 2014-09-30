@@ -1,0 +1,93 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>List sorter</title>
+<link rel="stylesheet" type="text/css" href="../bt3/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../css/setting.css">
+<link rel="stylesheet" type="text/css" href="../cube/css/base.css">
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery.storageapi.min.js"></script>
+<script src="../js/jquery.tmpl.min.js"></script>
+<script src="../js/jquery.loadTemplate-1.4.4.min.js"></script>
+<script src="../cube/js/base/Cube.js"></script>
+<script src="../cube/version.js"></script>
+</head>
+<body>
+<div class='ls-wrap'>
+    <div class='container-fluid ls-con'>
+        <h2 class='ls-title col-md-offset-1'>List Sorter Config</h2>
+        <hr>
+        <div class="form-horizontal ls-add-box">
+            <div class="form-group">
+                <label for="input-url" class="col-md-3 control-label">url</label>
+                <div class="col-sm-6">
+                    <input class="form-control" id="input-url" placeholder="http://www.liaohuqiu.net">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="input-container" class="col-md-3 control-label">container</label>
+                <div class="col-sm-6">
+                    <input class="form-control" id="input-container" placeholder=".list">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="input-list" class="col-md-3 control-label">list</label>
+                <div class="col-sm-6">
+                    <input class="form-control" id="input-list" placeholder=".list li">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="input-value" class="col-md-3 control-label">get value expression</label>
+                <div class="col-sm-6">
+                    <input class="form-control" id="input-value" placeholder="data('sort-value')">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <button class="btn btn-default btn-success js-btn-add">Add Config</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div id='list'>
+        </div>
+    </div>
+</div>
+<script src="../bt3/js/bootstrap.min.js"></script>
+<script type="text/html" id="list-template">
+<div class='row ls-config-box'>
+    <div class='ls-item-group'>
+        <label class='col-md-3'>url:</label>
+        <div class='col-md-4'>
+            <code>${url}</code>
+        </div>
+    </div>
+    <div class='ls-item-group'>
+        <label class='col-md-3'>container:</label>
+        <div class='col-md-4'>
+            <code>${container}</code>
+        </div>
+    </div>
+    <div class='ls-item-group'>
+        <label class='col-md-3'>list:</label>
+        <div class='col-md-4'>
+            <code>${list}</code>
+        </div>
+    </div>
+    <div class='ls-item-group'>
+        <label class='col-md-3'>get value expression:</label>
+        <div class='col-md-4'>
+            <code>${value}</code>
+        </div>
+    </div>
+    <div class='ls-item-group'>
+        <div class='col-md-offset-3 col-md-4'>
+            <span class="btn btn-danger js-btn-del" data-url=${url}>delete</span>
+        </div>
+    </div>
+    <hr>
+</div>
+</script>
+<script src="../js/setting.js"></script>
+</body>
+</html>

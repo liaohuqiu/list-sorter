@@ -1,0 +1,33 @@
+{
+    "manifest_version": 2,
+    "name": "List sorter",
+    "version": "0.0.1",
+    "description": "Sort <li/> in your page.",
+    "permissions": ["tabs", "storage", "notifications", "<all_urls>"],
+    "background": {"page": "app/background.html"},
+    "content_scripts" : [
+        {
+        "js" : [
+            "js/jquery.min.js", 
+            "js/jquery.storageapi.min.js", 
+            "cube/js/base/Cube.js",
+            "cube/version.js",
+            "js/content.js"
+        ],
+        "matches" : [
+            "<all_urls>"
+        ]
+    }
+    ],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "icons": {
+        "16": "./img/icon_16x16.png", 
+        "48": "./img/icon_48x48.png", 
+        "128": "./img/icon_128x128.png"
+    },
+    "browser_action": {
+        "default_popup": "./app/popup.html",
+        "default_title": "List sorter",
+        "default_icon": "./img/icon_128x128.png"
+    }
+}

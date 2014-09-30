@@ -1,0 +1,32 @@
+.ls-wrap {
+    margin: 20px 0 0 0;
+}
+.ls-con {
+    width: 1000px;
+    margin: 0 auto;
+}
+.ls-con label{
+    text-align: right;
+}
+
+.ls-table th, .ls-table {
+    text-align: center;
+}
+
+.ls-title {
+}
+
+.ls-add-box {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.ls-config-box {
+    margin-bottom: 30px;
+}
+
+.ls-item-group {
+    width: 100%;
+    display: table;
+    margin-bottom: 10px;
+}
